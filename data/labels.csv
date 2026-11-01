@@ -1,0 +1,121 @@
+item_id,topic,annotator_a,annotator_b,seconds_a,seconds_b,gold
+r001,travel,unhelpful,unhelpful,57,31,
+r002,billing,unhelpful,unhelpful,45,28,unhelpful
+r003,travel,helpful,helpful,39,19,
+r004,health info,hallucination,helpful,54,38,hallucination
+r005,health info,helpful,helpful,41,37,
+r006,recipes,unsafe,unsafe,37,38,
+r007,health info,hallucination,helpful,56,32,
+r008,travel,unhelpful,unhelpful,40,37,
+r009,travel,helpful,helpful,38,20,
+r010,billing,unhelpful,unhelpful,30,24,
+r011,recipes,helpful,helpful,54,53,
+r012,travel,helpful,helpful,38,32,
+r013,history,helpful,helpful,55,64,
+r014,history,helpful,helpful,57,42,
+r015,billing,unhelpful,unhelpful,71,26,
+r016,health info,hallucination,hallucination,49,20,
+r017,travel,hallucination,hallucination,46,41,
+r018,health info,unhelpful,hallucination,40,29,
+r019,health info,helpful,helpful,25,52,
+r020,history,helpful,helpful,45,11,
+r021,coding,hallucination,unhelpful,45,50,
+r022,coding,unhelpful,unhelpful,29,45,
+r023,billing,unhelpful,unhelpful,49,36,unhelpful
+r024,health info,helpful,helpful,41,40,helpful
+r025,coding,unsafe,unsafe,35,25,unsafe
+r026,recipes,helpful,helpful,36,35,
+r027,billing,helpful,helpful,45,12,
+r028,billing,helpful,helpful,46,37,
+r029,billing,helpful,helpful,70,29,helpful
+r030,billing,unhelpful,unhelpful,50,39,
+r031,recipes,helpful,hallucination,50,22,
+r032,recipes,unsafe,unsafe,34,24,
+r033,history,hallucination,hallucination,43,29,
+r034,history,unhelpful,unhelpful,48,35,
+r035,health info,helpful,unhelpful,35,23,
+r036,billing,helpful,helpful,39,21,
+r037,travel,unhelpful,helpful,34,27,
+r038,history,unhelpful,helpful,57,16,
+r039,health info,unsafe,unsafe,67,42,
+r040,travel,helpful,unhelpful,32,20,
+r041,health info,hallucination,hallucination,64,34,hallucination
+r042,recipes,unsafe,unsafe,54,39,unsafe
+r043,health info,hallucination,hallucination,60,22,hallucination
+r044,billing,helpful,helpful,65,19,helpful
+r045,coding,unhelpful,unhelpful,52,9,
+r046,billing,unsafe,unhelpful,57,10,
+r047,recipes,hallucination,helpful,51,22,hallucination
+r048,travel,hallucination,hallucination,38,32,
+r049,health info,helpful,helpful,66,37,
+r050,health info,unhelpful,helpful,53,28,unhelpful
+r051,coding,unhelpful,unhelpful,36,44,
+r052,billing,unhelpful,hallucination,47,45,
+r053,health info,helpful,helpful,42,22,
+r054,recipes,unhelpful,unhelpful,42,22,
+r055,history,unsafe,unsafe,36,10,
+r056,history,helpful,helpful,53,47,
+r057,recipes,helpful,helpful,22,33,
+r058,travel,unhelpful,unhelpful,36,45,unhelpful
+r059,billing,helpful,helpful,48,41,
+r060,travel,unhelpful,unhelpful,38,36,
+r061,travel,helpful,hallucination,57,36,hallucination
+r062,recipes,hallucination,hallucination,27,34,
+r063,history,hallucination,helpful,27,36,
+r064,travel,helpful,unhelpful,38,31,
+r065,health info,unhelpful,unhelpful,47,33,
+r066,travel,helpful,helpful,54,37,
+r067,coding,unhelpful,unhelpful,40,33,
+r068,coding,helpful,helpful,59,21,
+r069,recipes,hallucination,unhelpful,59,26,
+r070,recipes,helpful,helpful,36,30,helpful
+r071,billing,hallucination,unhelpful,59,40,
+r072,health info,hallucination,hallucination,51,37,
+r073,health info,helpful,helpful,48,11,
+r074,billing,helpful,helpful,56,27,
+r075,travel,unsafe,unsafe,48,31,unsafe
+r076,health info,unsafe,unsafe,38,31,
+r077,billing,helpful,unhelpful,61,8,
+r078,recipes,unhelpful,unhelpful,64,37,
+r079,history,unhelpful,unhelpful,55,13,
+r080,coding,helpful,helpful,37,29,
+r081,coding,unhelpful,unhelpful,56,16,
+r082,coding,unhelpful,helpful,66,21,
+r083,coding,helpful,helpful,56,26,
+r084,travel,helpful,helpful,71,33,
+r085,history,helpful,unhelpful,27,18,helpful
+r086,coding,helpful,helpful,39,27,
+r087,health info,helpful,helpful,51,45,
+r088,health info,helpful,helpful,63,29,
+r089,history,unhelpful,helpful,50,34,
+r090,history,helpful,helpful,30,20,helpful
+r091,history,helpful,helpful,48,31,helpful
+r092,coding,helpful,helpful,64,25,
+r093,health info,helpful,unhelpful,31,51,unhelpful
+r094,travel,unhelpful,unhelpful,31,22,
+r095,history,unsafe,unsafe,63,41,
+r096,history,unhelpful,helpful,56,25,helpful
+r097,recipes,unsafe,unsafe,64,39,unsafe
+r098,coding,helpful,helpful,48,30,helpful
+r099,billing,helpful,unhelpful,43,49,
+r100,travel,unhelpful,unhelpful,32,12,
+r101,billing,unhelpful,unhelpful,39,26,
+r102,history,helpful,helpful,35,27,
+r103,history,helpful,helpful,73,43,
+r104,travel,hallucination,helpful,29,22,hallucination
+r105,billing,unhelpful,unhelpful,38,21,
+r106,coding,helpful,unhelpful,54,38,
+r107,coding,helpful,helpful,33,53,helpful
+r108,history,hallucination,helpful,44,30,
+r109,coding,helpful,helpful,21,23,helpful
+r110,health info,unhelpful,unhelpful,53,15,unhelpful
+r111,billing,unsafe,unsafe,59,24,
+r112,coding,unhelpful,helpful,44,20,helpful
+r113,travel,helpful,helpful,31,20,
+r114,billing,helpful,helpful,61,25,
+r115,history,unsafe,unsafe,41,30,
+r116,recipes,helpful,helpful,70,21,
+r117,coding,helpful,helpful,42,40,
+r118,history,unhelpful,unsafe,44,30,
+r119,recipes,helpful,helpful,34,28,
+r120,history,helpful,helpful,49,22,

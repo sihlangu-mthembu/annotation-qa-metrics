@@ -1,0 +1,31 @@
+item_id,topic,annotator_a,annotator_b,gold_if_known
+r004,health info,hallucination,helpful,hallucination
+r007,health info,hallucination,helpful,
+r018,health info,unhelpful,hallucination,
+r021,coding,hallucination,unhelpful,
+r031,recipes,helpful,hallucination,
+r035,health info,helpful,unhelpful,
+r037,travel,unhelpful,helpful,
+r038,history,unhelpful,helpful,
+r040,travel,helpful,unhelpful,
+r046,billing,unsafe,unhelpful,
+r047,recipes,hallucination,helpful,hallucination
+r050,health info,unhelpful,helpful,unhelpful
+r052,billing,unhelpful,hallucination,
+r061,travel,helpful,hallucination,hallucination
+r063,history,hallucination,helpful,
+r064,travel,helpful,unhelpful,
+r069,recipes,hallucination,unhelpful,
+r071,billing,hallucination,unhelpful,
+r077,billing,helpful,unhelpful,
+r082,coding,unhelpful,helpful,
+r085,history,helpful,unhelpful,helpful
+r089,history,unhelpful,helpful,
+r093,health info,helpful,unhelpful,unhelpful
+r096,history,unhelpful,helpful,helpful
+r099,billing,helpful,unhelpful,
+r104,travel,hallucination,helpful,hallucination
+r106,coding,helpful,unhelpful,
+r108,history,hallucination,helpful,
+r112,coding,unhelpful,helpful,helpful
+r118,history,unhelpful,unsafe,
