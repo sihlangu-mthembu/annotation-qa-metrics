@@ -3,12 +3,12 @@
 from collections import Counter
 
 
-def percent_agreement(a, b):
+def percent_agreement(a: list[str], b: list[str]) -> float:
     """Share of items where both annotators chose the same label."""
     return sum(x == y for x, y in zip(a, b)) / len(a)
 
 
-def cohens_kappa(a, b):
+def cohens_kappa(a: list[str], b: list[str]) -> float:
     """Agreement between two annotators, corrected for chance.
 
     kappa = (observed - expected) / (1 - expected)
@@ -23,7 +23,7 @@ def cohens_kappa(a, b):
     return (observed - expected) / (1 - expected)
 
 
-def interpret_kappa(kappa):
+def interpret_kappa(kappa: float) -> str:
     """Landis & Koch (1977) bands, the most commonly cited scale."""
     for limit, name in [(0.0, "poor"), (0.20, "slight"), (0.40, "fair"),
                         (0.60, "moderate"), (0.80, "substantial")]:
@@ -32,7 +32,7 @@ def interpret_kappa(kappa):
     return "almost perfect"
 
 
-def confusion_matrix(a, b, labels):
+def confusion_matrix(a: list[str], b: list[str], labels: list[str]) -> dict[str, dict[str, int]]:
     """Rows: annotator A's label. Columns: annotator B's label."""
     matrix = {row: {col: 0 for col in labels} for row in labels}
     for x, y in zip(a, b):
@@ -40,7 +40,7 @@ def confusion_matrix(a, b, labels):
     return matrix
 
 
-def per_label_agreement(a, b, labels):
+def per_label_agreement(a: list[str], b: list[str], labels: list[str]) -> dict[str, tuple[float | None, int]]:
     """For each label: of the items either annotator gave that label, how many did both give it?"""
     result = {}
     for label in labels:
@@ -50,7 +50,7 @@ def per_label_agreement(a, b, labels):
     return result
 
 
-def accuracy_vs_gold(labels, gold):
+def accuracy_vs_gold(labels: list[str], gold: list[str]) -> tuple[float | None, int]:
     """Accuracy on the adjudicated spot-check sample only (items with a gold label)."""
     pairs = [(x, g) for x, g in zip(labels, gold) if g]
     if not pairs:
@@ -58,11 +58,11 @@ def accuracy_vs_gold(labels, gold):
     return sum(x == g for x, g in pairs) / len(pairs), len(pairs)
 
 
-def throughput_per_hour(seconds):
+def throughput_per_hour(seconds: list[float]) -> float:
     return 3600 / (sum(seconds) / len(seconds))
 
 
-def median(values):
+def median(values: list[float]) -> float:
     ordered = sorted(values)
     mid = len(ordered) // 2
     return ordered[mid] if len(ordered) % 2 else (ordered[mid - 1] + ordered[mid]) / 2

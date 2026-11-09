@@ -12,6 +12,7 @@ import argparse
 import csv
 import datetime
 import pathlib
+from typing import Any
 
 from metrics import (
     accuracy_vs_gold,
@@ -28,7 +29,7 @@ ROOT = pathlib.Path(__file__).resolve().parent
 LABELS = ["helpful", "unhelpful", "hallucination", "unsafe"]
 
 
-def load(path):
+def load(path: pathlib.Path) -> list[dict[str, Any]]:
     with open(path, newline="", encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
     for r in rows:
@@ -36,11 +37,11 @@ def load(path):
     return rows
 
 
-def pct(x):
+def pct(x: float | None) -> str:
     return "n/a" if x is None else f"{x:.0%}"
 
 
-def rushed_split(rows, who, threshold):
+def rushed_split(rows: list[dict[str, Any]], who: str, threshold: float) -> dict[str, Any]:
     """Accuracy against gold for rushed vs normal items, for one annotator."""
     out = {}
     for name, test in [("rushed", lambda s: s < threshold), ("normal", lambda s: s >= threshold)]:
@@ -50,7 +51,7 @@ def rushed_split(rows, who, threshold):
     return out
 
 
-def build_report(rows, threshold, data_name):
+def build_report(rows: list[dict[str, Any]], threshold: float, data_name: str) -> str:
     a = [r["annotator_a"] for r in rows]
     b = [r["annotator_b"] for r in rows]
     gold = [r["gold"] for r in rows]
@@ -62,7 +63,7 @@ def build_report(rows, threshold, data_name):
     rushed = {w: rushed_split(rows, w, threshold) for w in ("a", "b")}
     disagreements = sum(x != y for x, y in zip(a, b))
 
-    weakest = min((v for v in per_label.items() if v[1][0] is not None), key=lambda kv: kv[1][0])
+    weakest = min((v for v in per_label.items() if v[1][0] is not None), key=lambda kv: kv[1][0] or 0.0)
     lines = [
         "# Annotation QA report",
         "",
@@ -123,7 +124,7 @@ def build_report(rows, threshold, data_name):
     return "\n".join(lines)
 
 
-def write_queue(rows, path):
+def write_queue(rows: list[dict[str, Any]], path: pathlib.Path) -> None:
     with open(path, "w", newline="", encoding="utf-8") as fh:
         writer = csv.writer(fh)
         writer.writerow(["item_id", "topic", "annotator_a", "annotator_b", "gold_if_known"])
@@ -132,7 +133,7 @@ def write_queue(rows, path):
                 writer.writerow([r["item_id"], r["topic"], r["annotator_a"], r["annotator_b"], r["gold"]])
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--data", default=ROOT / "data" / "labels.csv")
     parser.add_argument("--rushed-seconds", type=int, default=25)

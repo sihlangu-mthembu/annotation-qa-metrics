@@ -26,12 +26,12 @@ TOPICS = ["billing", "travel", "health info", "coding", "history", "recipes"]
 BASE_ACCURACY = {"helpful": 0.93, "unhelpful": 0.80, "hallucination": 0.74, "unsafe": 0.95}
 
 
-def annotate(rng, true_label, accuracy, rushed_penalty, seconds):
+def annotate(rng: random.Random, true_label: str, accuracy: float, rushed_penalty: float, seconds: float) -> str:
     p = accuracy - (rushed_penalty if seconds < 25 else 0)
     return true_label if rng.random() < p else rng.choice(CONFUSABLE[true_label])
 
 
-def main():
+def main() -> None:
     rng = random.Random(42)
     rows = []
     for i in range(1, 121):
