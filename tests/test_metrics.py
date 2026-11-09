@@ -4,8 +4,13 @@ import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
-from metrics import (accuracy_vs_gold, cohens_kappa, interpret_kappa, percent_agreement,  # noqa: E402
-                     per_label_agreement)
+from metrics import (  # noqa: E402
+    accuracy_vs_gold,
+    cohens_kappa,
+    interpret_kappa,
+    per_label_agreement,
+    percent_agreement,
+)
 
 
 class KappaTests(unittest.TestCase):

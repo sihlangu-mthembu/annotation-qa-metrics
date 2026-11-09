@@ -13,8 +13,16 @@ import csv
 import datetime
 import pathlib
 
-from metrics import (accuracy_vs_gold, cohens_kappa, confusion_matrix, interpret_kappa, median,
-                     per_label_agreement, percent_agreement, throughput_per_hour)
+from metrics import (
+    accuracy_vs_gold,
+    cohens_kappa,
+    confusion_matrix,
+    interpret_kappa,
+    median,
+    per_label_agreement,
+    percent_agreement,
+    throughput_per_hour,
+)
 
 ROOT = pathlib.Path(__file__).resolve().parent
 LABELS = ["helpful", "unhelpful", "hallucination", "unsafe"]
@@ -80,7 +88,7 @@ def build_report(rows, threshold, data_name):
         n_acc, n_n = rushed[who]["normal"]
         lines.append(f"| {who.upper()} | {pct(acc)} | {median(secs):.0f} | {throughput_per_hour(secs):.0f} | "
                      f"{pct(r_acc)} (n={r_n}) | {pct(n_acc)} (n={n_n}) |")
-    lines += [f"", f"\"Rushed\" means under {threshold} seconds on an item.", "",
+    lines += ["", f"\"Rushed\" means under {threshold} seconds on an item.", "",
               "## Agreement by label", "",
               "| Label | Items either annotator chose it | Both agreed |", "| --- | --- | --- |"]
     for label, (share, either) in per_label.items():

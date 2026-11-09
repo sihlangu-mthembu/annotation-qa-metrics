@@ -1,5 +1,7 @@
 # annotation-qa-metrics
 
+![tests](https://github.com/sihlangu-mthembu/annotation-qa-metrics/actions/workflows/tests.yml/badge.svg)
+
 A small Python tool that answers the questions a human-data or QA lead asks after every labelling batch: **Do our annotators agree? Who needs feedback? Which guideline is unclear? What needs adjudication?**
 
 It takes a CSV of labels from two annotators and produces a QA report with inter-annotator agreement (Cohen's kappa), per-label agreement, a disagreement matrix, accuracy on a spot-check sample, speed and throughput KPIs, and concrete recommendations. It also writes an adjudication queue of every item the annotators disagreed on.
